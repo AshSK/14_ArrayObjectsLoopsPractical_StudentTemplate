@@ -21,6 +21,21 @@
         { name: "cheesecake", type: "food", quantity: 1, price: 4.99 },
         { name: "onions", type: "food", quantity: 3, price: 0.4 }
       ];
+
+      function calculateTotalPrice(cart) {
+        let totalPrice = 0;
+        for (let i = 0; i < cart.length; i++) {
+          let item = cart[i];
+          if (item.type === 'food') {
+            totalPrice += item.quantity * item.price * 0.8;
+          } else {
+            totalPrice += item.quantity * item.price;
+        }
+      }
+        return totalPrice;
+      }
+
+      console.log( calculateTotalPrice(shoppingCart));
     </script>
   </body>
 </html>
